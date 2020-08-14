@@ -6,8 +6,7 @@ namespace PayslipKata001
     {
         public static int Calculator( double netIncome, double superannuationRate)
         {
-            var superannuationValue = (Math.Round(netIncome * superannuationRate / 100, MidpointRounding.AwayFromZero));
-            return Convert.ToInt32(superannuationValue);
+            return Convert.ToInt32(Math.Round(netIncome * superannuationRate / 100, MidpointRounding.AwayFromZero));
         }
     }
 }
