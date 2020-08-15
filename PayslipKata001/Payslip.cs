@@ -9,7 +9,7 @@ namespace PayslipKata001
             return Convert.ToInt32(Math.Round(annualGrossPay / payPeriodsPerYear, MidpointRounding.AwayFromZero));
         }
 
-        public static double GrossTaxableValeCalculator(double annualGrossPay, double previousTaxBracketLimit)
+        public static double GrossTaxableValueCalculator(double annualGrossPay, double previousTaxBracketLimit)
         {
             return annualGrossPay - previousTaxBracketLimit;
         }

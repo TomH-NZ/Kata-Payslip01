@@ -4,11 +4,11 @@ namespace PayslipKata001
 {
     public static class Tax
     {
-        public static int Calculator(double previousTaxAmount, double taxableAmount, double taxPercentage)
+        public static int Calculator(double previousBracketTaxAmount, double taxableAmount, double taxPercentage)
         {
             const double payPeriodsPerYear = 12;
             
-            var taxAmount = Math.Round((previousTaxAmount + taxableAmount * taxPercentage / 100) / payPeriodsPerYear, MidpointRounding.AwayFromZero);
+            var taxAmount = Math.Round((previousBracketTaxAmount + taxableAmount * taxPercentage / 100) / payPeriodsPerYear, MidpointRounding.AwayFromZero);
             return Convert.ToInt32(taxAmount);
         }
     }
