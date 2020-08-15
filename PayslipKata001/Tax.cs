@@ -2,13 +2,16 @@ using System;
 
 namespace PayslipKata001
 {
-    public class Tax
+    public static class Tax
     {
-        public static int Calculator(double previousTaxAmount, double grossIncome, double previousTaxBracketLimit,
-            double taxPercentage, double payPeriodsPerYear)
+        public static int Calculator(double previousTaxAmount, double taxableAmount, double taxPercentage)
         {
-            var taxAmount = Math.Round((previousTaxAmount + (grossIncome - previousTaxBracketLimit) * taxPercentage / 100) / payPeriodsPerYear, MidpointRounding.AwayFromZero);
+            const double payPeriodsPerYear = 12;
+            
+            var taxAmount = Math.Round((previousTaxAmount + taxableAmount * taxPercentage / 100) / payPeriodsPerYear, MidpointRounding.AwayFromZero);
             return Convert.ToInt32(taxAmount);
         }
     }
 }
+
+//ToDo: (grossIncome - previousTaxBracketLimit) passed as a single value from payslip? 

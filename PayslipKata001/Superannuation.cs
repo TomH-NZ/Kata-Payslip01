@@ -2,7 +2,7 @@ using System;
 
 namespace PayslipKata001
 {
-    public class Superannuation
+    public static class Superannuation
     {
         public static int Calculator( double netIncome, double superannuationRate)
         {    

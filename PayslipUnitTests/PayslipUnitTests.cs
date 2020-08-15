@@ -9,7 +9,7 @@ namespace PayslipUnitTests
         public void ShouldCalculateCorrectly()
         {
             //Act
-            var grossPay = Payslip.GrossPay(60050, 12);
+            var grossPay = Payslip.GrossPayPeriodValueCalculator(60050, 12);
             //Arrange
             //Assert
             Assert.Equal(5004, grossPay);
@@ -22,7 +22,7 @@ namespace PayslipUnitTests
         [InlineData()]*/
         public void ShouldCalculateGrossPayCorrectly(double annualGrossPay, double payPeriodsPerYear, int outputGrossPay)
         {
-            var grossPay = Payslip.GrossPay(annualGrossPay, payPeriodsPerYear);
+            var grossPay = Payslip.GrossPayPeriodValueCalculator(annualGrossPay, payPeriodsPerYear);
             Assert.Equal(outputGrossPay, grossPay);
         }
     }
