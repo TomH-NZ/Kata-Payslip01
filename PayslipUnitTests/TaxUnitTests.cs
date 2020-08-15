@@ -1,4 +1,3 @@
-using System;
 using PayslipKata001;
 using Xunit;
 
@@ -10,10 +9,10 @@ namespace PayslipUnitTests
         public void ShouldCalculateCorrectlyFact()
         {
             //Arrange
-            var calculatedTax = Tax.Calculator(3572, 23050, 32.5);
+            var result = Tax.Calculator(3572, 23050, 32.5);
             //Act
             //Assert
-            Assert.Equal(922, calculatedTax);
+            Assert.Equal(922, result);
         }
 
         [Theory]
@@ -25,10 +24,10 @@ namespace PayslipUnitTests
             double taxPercentage, int outputTaxValue)
         {
             //Arrange
-            var taxCalculated = Tax.Calculator(previousTaxAmount, taxableAmount, taxPercentage);
+            var result = Tax.Calculator(previousTaxAmount, taxableAmount, taxPercentage);
             //Act
             //Assert
-            Assert.Equal(outputTaxValue, taxCalculated);
+            Assert.Equal(outputTaxValue, result);
         }
     }
 }

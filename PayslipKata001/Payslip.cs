@@ -4,14 +4,14 @@ namespace PayslipKata001
 {
     public static class Payslip
     {
-        public static int GrossPayPeriodValueCalculator(double annualGrossPay, double payPeriodsPerYear)
+        public static int GrossPayPeriodValueCalculator(double grossAnnualPay, double payPeriodsPerYear)
         {
-            return Convert.ToInt32(Math.Round(annualGrossPay / payPeriodsPerYear, MidpointRounding.AwayFromZero));
+            return Convert.ToInt32(Math.Round(grossAnnualPay / payPeriodsPerYear, MidpointRounding.AwayFromZero));
         }
 
-        public static double GrossTaxableValueCalculator(double annualGrossPay, double previousTaxBracketLimit)
+        public static double GrossTaxableValueCalculator(double grossAnnualPay, double previousTaxBracketLimit)
         {
-            return annualGrossPay - previousTaxBracketLimit;
+            return grossAnnualPay - previousTaxBracketLimit;
         }
     }
 }

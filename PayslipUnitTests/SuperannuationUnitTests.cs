@@ -1,4 +1,3 @@
-using System;
 using PayslipKata001;
 using Xunit;
 
@@ -7,7 +6,7 @@ namespace PayslipUnitTests
     public class SuperannuationUnitTests
     {
         [Fact]
-        public void ShouldCalculateCorrectly()
+        public void ShouldCalculateCorrectlyFact()
         {
             //Arrange
             var result = Superannuation.Calculator(200, 9);
@@ -21,7 +20,7 @@ namespace PayslipUnitTests
         [InlineData(3500, 9, 315)]
         [InlineData(2500, 4, 100)]
         [InlineData(4000, 8, 320)]
-        public void ShouldCalculateSuperannuationCorrectly(double netIncome, double superannuationRate, int superannuationValue)
+        public void ShouldCalculateSuperannuationCorrectlyTheory(double netIncome, double superannuationRate, int superannuationValue)
         {
             //Arrange
             var result = Superannuation.Calculator(netIncome, superannuationRate);
