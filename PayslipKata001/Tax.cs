@@ -13,5 +13,3 @@ namespace PayslipKata001
         }
     }
 }
-
-//ToDo: (grossIncome - previousTaxBracketLimit) passed as a single value from payslip? 

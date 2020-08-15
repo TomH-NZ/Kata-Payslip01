@@ -4,9 +4,9 @@ namespace PayslipKata001
 {
     public static class Payslip
     {
-        public static int GrossPayPeriodValueCalculator(double grossAnnualPay, double payPeriodsPerYear)
+        public static int GrossPayPeriodValueCalculator(double grossAnnualPay)
         {
-            return Convert.ToInt32(Math.Round(grossAnnualPay / payPeriodsPerYear, MidpointRounding.AwayFromZero));
+            return Convert.ToInt32(Math.Round(grossAnnualPay / 12, MidpointRounding.AwayFromZero));
         }
 
         public static double GrossTaxableValueCalculator(double grossAnnualPay, double previousTaxBracketLimit)

@@ -45,5 +45,24 @@ namespace PayslipKata001
             
             return 0;
         }
+
+        public static double PreviousTaxBracketLimit(double grossPay)
+        {
+            if (grossPay >= 180001)
+            {
+                return 180000;
+            }
+            if (grossPay >= 87001 && grossPay <= 180000)
+            {
+                return 87000;
+            }
+
+            if (grossPay >= 37001 && grossPay <= 87000)
+            {
+                return 37000;
+            }
+            
+            return 0;
+        }
     }
 }
