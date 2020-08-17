@@ -8,17 +8,17 @@ namespace PayslipKata001
         {
             Console.WriteLine("Welcome to the payslip generator. \n");
             Console.WriteLine("Please enter your name:");
-            var firstName = Console.ReadLine();
+            var payslipFirstName = Console.ReadLine();
             Console.WriteLine("Please enter your surname:");
-            var lastName = Console.ReadLine();
+            var payslipLastName = Console.ReadLine();
             Console.WriteLine("Please enter your annual salary:");
             var grossSalary = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Please enter your superannuation rate:");
             var superannuationRate = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Please enter the pay period start date:");
-            var startDate = Console.ReadLine();
+            var payPeriodStartDate = Console.ReadLine();
             Console.WriteLine("Please enter the pay period end date:");
-            var endDate = Console.ReadLine();
+            var payPeriodEndDate = Console.ReadLine();
             Console.WriteLine();
 
             var grossIncome = Payslip.GrossPayPeriodValueCalculator(grossSalary);
@@ -29,8 +29,8 @@ namespace PayslipKata001
             var superannuationAmount = Superannuation.Calculator(Convert.ToDouble(grossIncome), superannuationRate);
 
             Console.WriteLine("Your payslip is: \n");
-            Console.WriteLine($"Name: {firstName} {lastName}");
-            Console.WriteLine($"Pay Period: {startDate} to {endDate}");
+            Console.WriteLine($"Name: {payslipFirstName} {payslipLastName}");
+            Console.WriteLine($"Pay Period: {payPeriodStartDate} to {payPeriodEndDate}");
             Console.WriteLine($"Gross Income: {grossIncome}");
             Console.WriteLine($"Income Tax: {incomeTax}");
             Console.WriteLine($"Net Income: {netIncome}");
