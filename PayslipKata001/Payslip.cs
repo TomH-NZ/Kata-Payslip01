@@ -2,7 +2,7 @@ using System;
 
 namespace PayslipKata001
 {
-    public static class Payslip
+    public class Payslip
     {
         public static int GrossPayPeriodValueCalculator(double grossAnnualPay)
         {
@@ -13,5 +13,7 @@ namespace PayslipKata001
         {
             return grossAnnualPay - previousTaxBracketLimit;
         }
+        
+        
     }
 }

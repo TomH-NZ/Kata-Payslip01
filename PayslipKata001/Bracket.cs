@@ -4,7 +4,7 @@ namespace PayslipKata001
 {
     public static class Bracket
     {
-        public static double TaxPercent(double grossPay)
+        public static double DetermineTaxPercent(double grossPay)
         {
             if (grossPay >= 180001)
             {
@@ -27,7 +27,7 @@ namespace PayslipKata001
             return 0;
         }
 
-        public static double MinimumTaxAmount(double grossPay)
+        public static double DetermineMinimumTaxAmount(double grossPay)
         {
             if (grossPay >= 180001)
             {

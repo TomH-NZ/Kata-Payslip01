@@ -4,7 +4,7 @@ namespace PayslipKata001
 {
     public static class Tax
     {
-        public static int Calculator(double previousBracketTaxAmount, double taxableAmount, double taxPercentage)
+        public static int Calculate(double previousBracketTaxAmount, double taxableAmount, double taxPercentage)
         {
             const double payPeriodsPerYear = 12;
             

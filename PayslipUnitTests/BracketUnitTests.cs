@@ -9,7 +9,7 @@ namespace PayslipUnitTests
         public void ShouldProvideTaxPercentCorrectlyFact()
         {
             //Act
-            var result = Bracket.TaxPercent(20000);
+            var result = Bracket.DetermineTaxPercent(20000);
             //Arrange
             //Assert
             Assert.Equal(19, result);
@@ -23,7 +23,7 @@ namespace PayslipUnitTests
         public void ShouldProvideTaxPercentCorrectlyTheory(double grossPay, double expected)
         {
             //Act
-            var result = Bracket.TaxPercent(grossPay);
+            var result = Bracket.DetermineTaxPercent(grossPay);
             //Arrange
             //Assert
             Assert.Equal(expected, result);
@@ -33,7 +33,7 @@ namespace PayslipUnitTests
         public void ShouldProvideMinimumTaxAmountCorrectlyFact()
         {
             //Act
-            var result = Bracket.MinimumTaxAmount(50000);
+            var result = Bracket.DetermineMinimumTaxAmount(50000);
             //Arrange
             //Assert
             Assert.Equal(3572, result);
@@ -47,7 +47,7 @@ namespace PayslipUnitTests
         public void ShouldProvideMinimumTaxAmountCorrectlyTheory(double grossPay, double expected)
         {
             //Act
-            var result = Bracket.MinimumTaxAmount(grossPay);
+            var result = Bracket.DetermineMinimumTaxAmount(grossPay);
             //Arrange
             //Assert
             Assert.Equal(expected, result);

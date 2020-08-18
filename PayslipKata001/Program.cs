@@ -22,9 +22,9 @@ namespace PayslipKata001
             Console.WriteLine();
 
             var grossIncome = Payslip.GrossPayPeriodValueCalculator(grossSalary);
-            var incomeTax = Tax.Calculator(Bracket.MinimumTaxAmount(grossSalary),
+            var incomeTax = Tax.Calculate(Bracket.DetermineMinimumTaxAmount(grossSalary),
                 Payslip.GrossTaxableValueCalculator(grossSalary, Bracket.PreviousTaxBracketLimit(grossSalary)),
-                Bracket.TaxPercent(grossSalary));
+                Bracket.DetermineTaxPercent(grossSalary));
             var netIncome = grossIncome - incomeTax;
             var superannuationAmount = Superannuation.Calculator(Convert.ToDouble(grossIncome), superannuationRate);
 

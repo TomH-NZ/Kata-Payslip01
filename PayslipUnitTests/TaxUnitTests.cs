@@ -9,7 +9,7 @@ namespace PayslipUnitTests
         public void ShouldCalculateCorrectlyFact()
         {
             //Arrange
-            var result = Tax.Calculator(3572, 23050, 32.5);
+            var result = Tax.Calculate(3572, 23050, 32.5);
             //Act
             //Assert
             Assert.Equal(922, result);
@@ -24,7 +24,7 @@ namespace PayslipUnitTests
             double taxPercentage, int outputTaxValue)
         {
             //Arrange
-            var result = Tax.Calculator(previousTaxAmount, taxableAmount, taxPercentage);
+            var result = Tax.Calculate(previousTaxAmount, taxableAmount, taxPercentage);
             //Act
             //Assert
             Assert.Equal(outputTaxValue, result);
