@@ -9,7 +9,7 @@ namespace PayslipUnitTests
         public void ShouldCalculateCorrectlyFact()
         {
             //Act
-            var result = Payslip.GrossPayPeriodValueCalculator(60050);
+            var result = Calculate.GrossPayPeriodIncome(60050);
             //Arrange
             //Assert
             Assert.Equal(5004, result);
@@ -23,7 +23,7 @@ namespace PayslipUnitTests
         public void ShouldCalculateGrossPayCorrectlyTheory(double grossAnnualPay, double payPeriodsPerYear, int outputGrossPay)
         {
             //Act
-            var result = Payslip.GrossPayPeriodValueCalculator(grossAnnualPay);
+            var result = Calculate.GrossPayPeriodIncome(grossAnnualPay);
             //Arrange
             //Assert
             Assert.Equal(outputGrossPay, result);
@@ -33,7 +33,7 @@ namespace PayslipUnitTests
         public void ShouldReturnGrossTaxableValueCorrectlyFact()
         {
             //Act
-            var result = Payslip.GrossTaxableValueCalculator(40000, 37000);
+            var result = Calculate.GrossAnnualTaxableValue(40000, 37000);
             //Arrange
             //Assert
             Assert.Equal(3000, result);
@@ -48,7 +48,7 @@ namespace PayslipUnitTests
             double actual)
         {
             //Act
-            var result = Payslip.GrossTaxableValueCalculator(grossAnnualPay, previousTaxBracketLimit);
+            var result = Calculate.GrossAnnualTaxableValue(grossAnnualPay, previousTaxBracketLimit);
             //Arrange
             //Assert
             Assert.Equal(actual, result);

@@ -21,12 +21,12 @@ namespace PayslipKata001
             var payPeriodEndDate = Console.ReadLine();
             Console.WriteLine();
 
-            var grossIncome = Payslip.GrossPayPeriodValueCalculator(grossSalary);
-            var incomeTax = Tax.Calculate(Bracket.DetermineMinimumTaxAmount(grossSalary),
-                Payslip.GrossTaxableValueCalculator(grossSalary, Bracket.PreviousTaxBracketLimit(grossSalary)),
-                Bracket.DetermineTaxPercent(grossSalary));
+            var grossIncome = Calculate.GrossPayPeriodIncome(grossSalary);
+            var incomeTax = Calculate.Tax(Tax.DetermineMinimumAmount(grossSalary),
+                Calculate.GrossAnnualTaxableValue(grossSalary, Tax.DeterminePreviousBracketLimit(grossSalary)),
+                Tax.DeterminePercent(grossSalary));
             var netIncome = grossIncome - incomeTax;
-            var superannuationAmount = Superannuation.Calculator(Convert.ToDouble(grossIncome), superannuationRate);
+            var superannuationAmount = Calculate.Superannuation(Convert.ToDouble(grossIncome), superannuationRate);
 
             Console.WriteLine("Your payslip is: \n");
             Console.WriteLine($"Name: {payslipFirstName} {payslipLastName}");
@@ -36,6 +36,7 @@ namespace PayslipKata001
             Console.WriteLine($"Net Income: {netIncome}");
             Console.WriteLine($"Superannuation: {superannuationAmount}");
             Console.ReadLine();
+            
         }
     }
 }

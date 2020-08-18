@@ -9,7 +9,7 @@ namespace PayslipUnitTests
         public void ShouldCalculateCorrectlyFact()
         {
             //Arrange
-            var result = Superannuation.Calculator(200, 9);
+            var result = Calculate.Superannuation(200, 9);
             //Act
             //Assert
             Assert.Equal(18, result);
@@ -23,7 +23,7 @@ namespace PayslipUnitTests
         public void ShouldCalculateSuperannuationCorrectlyTheory(double netIncome, double superannuationRate, int superannuationValue)
         {
             //Arrange
-            var result = Superannuation.Calculator(netIncome, superannuationRate);
+            var result = Calculate.Superannuation(netIncome, superannuationRate);
             //Act
             //Assert
             Assert.Equal(superannuationValue, result);
