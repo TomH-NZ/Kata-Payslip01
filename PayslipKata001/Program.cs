@@ -12,7 +12,7 @@ namespace PayslipKata001
             Console.WriteLine("Please enter your surname:");
             var payslipLastName = Console.ReadLine();
             Console.WriteLine("Please enter your annual salary:");
-            var grossSalary = Convert.ToDouble(Console.ReadLine());
+            var grossAnnualSalary = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Please enter your superannuation rate:");
             var superannuationRate = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Please enter the pay period start date:");
@@ -21,10 +21,10 @@ namespace PayslipKata001
             var payPeriodEndDate = Console.ReadLine();
             Console.WriteLine();
 
-            var grossIncome = Calculate.GrossPayPeriodIncome(grossSalary);
-            var incomeTax = Calculate.Tax(Tax.DetermineMinimumAmount(grossSalary),
-                Calculate.GrossAnnualTaxableValue(grossSalary, Tax.DeterminePreviousBracketLimit(grossSalary)),
-                Tax.DeterminePercent(grossSalary));
+            var grossIncome = Calculate.GrossPayPeriodIncome(grossAnnualSalary);
+            var incomeTax = Calculate.Tax(Tax.DetermineMinimumAmount(grossAnnualSalary),
+                Calculate.GrossAnnualTaxableValue(grossAnnualSalary, Tax.DeterminePreviousBracketLimit(grossAnnualSalary)),
+                Tax.DeterminePercent(grossAnnualSalary));
             var netIncome = grossIncome - incomeTax;
             var superannuationAmount = Calculate.Superannuation(Convert.ToDouble(grossIncome), superannuationRate);
 
